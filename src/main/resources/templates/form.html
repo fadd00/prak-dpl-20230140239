@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Input Data - MY Website</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>MY Website 20210140019</h1>
+        <h2>Input Data Mahasiswa</h2>
+        <form th:action="@{/form}" th:object="${user}" method="post">
+            <div class="form-group">
+                <label for="nama">Nama</label>
+                <input type="text" id="nama" th:field="*{nama}" required>
+            </div>
+            <div class="form-group">
+                <label for="nim">NIM</label>
+                <input type="text" id="nim" th:field="*{nim}" required>
+            </div>
+            <div class="form-group">
+                <label for="jenisKelamin">Jenis Kelamin</label>
+                <select id="jenisKelamin" th:field="*{jenisKelamin}" required>
+                    <option value="">-- Pilih --</option>
+                    <option value="Laki-laki">Laki-laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </div>
+            <button type="submit">Simpan Data</button>
+        </form>
+        <br>
+        <a th:href="@{/home}">Kembali ke Home</a>
+    </div>
+</body>
+
+</html>
